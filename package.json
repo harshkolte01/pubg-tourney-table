@@ -18,6 +18,7 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "http": "^0.0.1-security",
+    "mongodb": "^6.13.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.17.0",
@@ -30,11 +31,14 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm run setup-db && concurrently \"npm run react\" \"npm run server\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "ts-node server.ts"
+    "server": "ts-node server.ts",
+    "setup-db": "npx ts-node database/db_setup.ts",
+    "react": "react-scripts start"
+
   },
   "eslintConfig": {
     "extends": [
@@ -55,6 +59,7 @@
     ]
   },
   "devDependencies": {
-    "@types/cors": "^2.8.15"
+    "@types/cors": "^2.8.15",
+    "concurrently": "^9.1.2"
   }
 }

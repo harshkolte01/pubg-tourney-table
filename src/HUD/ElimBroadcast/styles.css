@@ -1,43 +1,73 @@
-body {
-    margin: 0;
-    padding: 0;
-}
-span, p {
-    margin: 0;
-    padding: 0;
-}
 .broadcast-div {
     display: none;
     justify-content: center;
     align-items: center;
-    font-family: 'Poppins';
-    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
     width: fit-content;
-    height: 35px;
-    left: 0;
-    right: 0;
+    height: 60px; /* Increased height */
     margin: 0 auto;
-    padding-left: 60px;
-    padding-right: 60px;
-    background-blend-mode: screen;
-    background-size: 100%;
-    background-position: left, right;
-    background-repeat: no-repeat;
-
-    background: linear-gradient(to left, rgba(255, 0, 0, 0), rgb(0, 123, 255), rgba(255, 0, 0, 0));
-
+    padding: 0 80px;
+    background: linear-gradient(
+        to right,
+        rgba(0, 123, 255, 0.2),
+        rgba(0, 123, 255, 0.5),
+        rgba(0, 123, 255, 0.2)
+    );
+    border-radius: 12px;
+    border: 2px solid rgba(0, 123, 255, 0.8);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+    backdrop-filter: blur(5px);
     opacity: 0;
-    transition: opacity 1s;
-    gap: 8px;
+    transition: opacity 0.8s ease-in-out;
+    gap: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.broadcast-div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
 }
 
 .team-logo-br {
-    height: 70%;
+    height: 40px;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+    z-index: 1;
 }
+
 .team-name-br-p {
-    color: goldenrod;
-    font-family: var(--font-family);
-    font-family: var(--font-family-m);
-    font-size: 23px;
-    margin-bottom: 2px;
+    color: #ffd700;
+    font-size: 28px; /* Larger font size */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.team-placement-br {
+    color: #ffffff;
+    margin-left: 12px;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-shadow: none;
 }

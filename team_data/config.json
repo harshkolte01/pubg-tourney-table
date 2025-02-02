@@ -1,84 +1,94 @@
 {
     "team_data": [
         {
-            "name": "Boring Protocol",
-            "initial": "Bop",
+            "name": "FTW ESPORTS",
+            "initial": "FTW",
             "logo": "team_data/team_logos/1.png"
         },
         {
-            "name": "Ghost Gaming",
-            "initial": "Ghost",
+            "name": "BORG ESPORTS",
+            "initial": "BORG",
             "logo": "team_data/team_logos/2.png"
         },
         {
-            "name": "Why K Gee",
-            "initial": "YKG",
+            "name": "RSP ESPORTS",
+            "initial": "RSP",
             "logo": "team_data/team_logos/3.png"
         },
         {
-            "name": "Loops Esports",
-            "initial": "Loops",
+            "name": "SECTOR 7",
+            "initial": "S7",
             "logo": "team_data/team_logos/4.png"
         },
         {
-            "name": "Nigma Galaxy",
-            "initial": "ngx",
+            "name": "UNDERGODS",
+            "initial": "UGODS",
             "logo": "team_data/team_logos/5.png"
         },
         {
-            "name": "NASR Esports",
-            "initial": "NASR",
+            "name": "TEAM SHIELD",
+            "initial": "SHIELD",
             "logo": "team_data/team_logos/6.png"
         },
         {
-            "name": "Influence Rage",
-            "initial": "INF",
+            "name": "UNDEFETABLE GODS",
+            "initial": "UDFT",
             "logo": "team_data/team_logos/7.png"
         },
         {
-            "name": "N Hyper Esports",
-            "initial": "NHP",
-            "logo": "team_data/team_logos/8.png"
+            "name": "JODxESPORTS",
+            "initial": "JODx",
+            "logo": "team_data/team_logos/8.jpg"
         },
         {
-            "name": "Team Queso",
-            "initial": "TQ",
+            "name": "MIDDLE CLASS ESPORTS",
+            "initial": "MCE",
             "logo": "team_data/team_logos/9.png"
         },
         {
-            "name": "REJECT",
-            "initial": "RC",
+            "name": "GRAVITY ZERO",
+            "initial": "GZ",
             "logo": "team_data/team_logos/10.png"
         },
         {
-            "name": "Intense Game",
-            "initial": "iG",
+            "name": "SERIOUSxPSYKO",
+            "initial": "SP",
             "logo": "team_data/team_logos/11.png"
         },
         {
-            "name": "Nongshim RedForce",
-            "initial": "NSR",
+            "name": "SKYLIGHTZ GAMING",
+            "initial": "SG",
             "logo": "team_data/team_logos/12.png"
         },
         {
-            "name": "Rise Esports",
-            "initial": "Rise",
+            "name": "SPARK WARRIOR",
+            "initial": "SW",
             "logo": "team_data/team_logos/13.png"
         },
         {
-            "name": "Pittsburgh Knights",
-            "initial": "Knights",
+            "name": "CRAZY ATTACKERS",
+            "initial": "CA",
             "logo": "team_data/team_logos/14.png"
         },
         {
-            "name": "19 eSports",
-            "initial": "19e",
+            "name": "FALCON FURIES",
+            "initial": "FF",
             "logo": "team_data/team_logos/15.png"
         },
         {
-            "name": "Cloud 9",
-            "initial": "C9",
+            "name": "KING OF GODS",
+            "initial": "KOG",
             "logo": "team_data/team_logos/16.png"
+        },
+        {
+            "name": "DEATH REAPERS",
+            "initial": "DR",
+            "logo": "team_data/team_logos/17.png"
+        },
+        {
+            "name": "BEEKEPERS",
+            "initial": "BEE",
+            "logo": "team_data/team_logos/18.png"
         }
     ],
     "table_data": {

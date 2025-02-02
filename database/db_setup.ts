@@ -1,36 +1,35 @@
-import sqlite3 from 'sqlite3';
-import teamData from '../team_data/config.json';
+import { MongoClient } from "mongodb";
+import teamData from "../team_data/config.json";
 
-const db = new sqlite3.Database('./database/database.db');
+const uri = "mongodb+srv://harshop12241:H%40rsh1to10@cluster0.mmhaq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const client = new MongoClient(uri);
 
-db.serialize(() => {
-    db.get('PRAGMA table_info(team_points)', (err, result) => {
-        if (!err && result) {
-            const statement2 = db.prepare('DROP TABLE team_points');
-            statement2.run();
-            statement2.finalize();
-
-            console.log('Table was deleted.');
-        }
-
-        createTableAndInsertData();
-    });
-});
-
-function createTableAndInsertData() {
+async function setupDatabase() {
     try {
-        for (let i = 0; i < teamData.team_data.length; i++) {
-            db.serialize(() => {
-                const statement = db.prepare('CREATE TABLE IF NOT EXISTS team_points (id INTEGER PRIMARY KEY, team_id INTEGER, team_points INTEGER)');
-                statement.run();
-    
-                const insertStatement = db.prepare('INSERT INTO team_points (team_id, team_points) VALUES (?, ?)');
-                insertStatement.run(i + 1, 0);
-                insertStatement.finalize();
-            });
+        await client.connect();
+        const db = client.db("tournamentDB"); // Change database name as needed
+        const collection = db.collection("team_points");
+
+        // Drop existing collection if it exists
+        const collections = await db.listCollections({ name: "team_points" }).toArray();
+        if (collections.length > 0) {
+            await collection.drop();
+            console.log("Collection was deleted.");
         }
-        console.log('Table was created and data was inserted.');
-    } catch {
-        console.log('Something was happened. Check team data and config.json')
+
+        // Insert new team data
+        const teamPointsData = teamData.team_data.map((_, index) => ({
+            team_id: index + 1,
+            team_points: 0,
+        }));
+
+        await collection.insertMany(teamPointsData);
+        console.log("Collection was created and data was inserted.");
+    } catch (error) {
+        console.error("Something happened. Check team data and config.json", error);
+    } finally {
+        await client.close();
     }
-};
+}
+
+setupDatabase();

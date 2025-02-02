@@ -42,16 +42,27 @@ function ElimBroadcast() {
     }, [teamsLength]);
     
 
+    // return (
+    //     <div>
+    //         <div className='broadcast-div'>
+    //             <img src='' alt="" className='team-logo-br'/>
+    //             <p className='team-name-br-p'>
+    //                 <span className='team-name-br'></span> IS ELIMINATED <span className='team-placement-br'>#{teamsLength}/{teamsLengthM}</span>
+    //             </p>
+    //         </div>
+    //     </div>
+    // );
     return (
         <div>
-            <div className='broadcast-div'>
-                <img src='' alt="" className='team-logo-br'/>
-                <p className='team-name-br-p'>
-                    <span className='team-name-br'></span> IS ELIMINATED <span className='team-placement-br'>#{teamsLength}/{teamsLengthM}</span>
-                </p>
-            </div>
+          <div className='broadcast-div'>
+            <img src='' alt="" className='team-logo-br'/>
+            <p className='team-name-br-p'>
+              <span className='team-name-br'></span> HAS BEEN ELIMINATED 
+              <span className='team-placement-br'> #{teamsLength}/{teamsLengthM}</span>
+            </p>
+          </div>
         </div>
-    );
+      );
 }
 
 export default ElimBroadcast;
